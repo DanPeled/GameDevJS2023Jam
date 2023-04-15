@@ -11,16 +11,18 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 10f;
     public float walkSpeed = 7f;
     public float currentSpeed;
-    private Rigidbody2D rb;
 
     [Header("Refrences")]
     public Animator anim;
     public GameObject playerMesh;
     public SpriteRenderer head;
     public Sprite headFront, headBack;
-
+    public static PlayerController i;
+    [HideInInspector]
+    public Rigidbody2D rb;
     public void Start()
     {
+        i = this;
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         currentSpeed = walkSpeed;

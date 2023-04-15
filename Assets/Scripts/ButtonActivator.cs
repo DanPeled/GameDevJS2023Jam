@@ -5,9 +5,11 @@ public class ButtonActivator : MonoBehaviour
     public GameObject other;
     public bool triggerRepeatedly = true;
     private Rigidbody2D rb;
+    public Vector3 originalPos;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        originalPos = transform.position;
     }
     void Update()
     {
