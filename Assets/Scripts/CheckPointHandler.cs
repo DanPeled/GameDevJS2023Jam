@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class CheckPointHandler : MonoBehaviour
 {
+    public static CheckPointHandler i;
     public CheckPoint checkPoint;
+    void Awake()
+    {
+        i = this;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         CheckPoint checkPoint = other.gameObject.GetComponent<CheckPoint>();
@@ -16,33 +21,37 @@ public class CheckPointHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && checkPoint != null)
         {
-            // reset game to last checkpoint
-            foreach (var buttonActivator in FindObjectsOfType<ButtonActivator>())
-            {
-                // get every button activator and reset its position
-                buttonActivator.transform.position = buttonActivator.originalPos;
-            }
-            foreach (var bomb in FindObjectsOfType<Bomb>())
-            {
-                // get every bomb and reset its position
-                bomb.transform.position = bomb.originalPos;
-            }
-            foreach (var btn in FindObjectsOfType<pButton>())
-            {
-                //get every button and set it to its initial state
-                btn.SetActive(btn.initialState);
-            }
-            foreach (var dialogTrigger in FindObjectsOfType<DialogTrigger>())
-            {
-                // reset state of each dialog trigger
-                dialogTrigger.used = false;
-            }
-            foreach (var bombTrigger in FindObjectsOfType<BombTrigger>())
-            {
-                // reset state of each bomb trigger
-                bombTrigger.gameObject.SetActive(true);
-            }
-            checkPoint.Load(); // reset player pos 
+            Restart();
         }
+    }
+    public void Restart()
+    {
+        // reset game to last checkpoint
+        foreach (var buttonActivator in FindObjectsOfType<ButtonActivator>())
+        {
+            // get every button activator and reset its position
+            buttonActivator.transform.position = buttonActivator.originalPos;
+        }
+        foreach (var bomb in FindObjectsOfType<Bomb>())
+        {
+            // get every bomb and reset its position
+            bomb.transform.position = bomb.originalPos;
+        }
+        foreach (var btn in FindObjectsOfType<pButton>())
+        {
+            //get every button and set it to its initial state
+            btn.SetActive(btn.initialState);
+        }
+        foreach (var dialogTrigger in FindObjectsOfType<DialogTrigger>())
+        {
+            // reset state of each dialog trigger
+            dialogTrigger.used = false;
+        }
+        foreach (var bombTrigger in FindObjectsOfType<BombTrigger>())
+        {
+            // reset state of each bomb trigger
+            bombTrigger.gameObject.SetActive(true);
+        }
+        checkPoint.Load(); // reset player pos
     }
 }

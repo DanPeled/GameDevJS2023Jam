@@ -26,10 +26,11 @@ public class DialogManager : MonoBehaviour
         Show();
         yield return (TypeDialog(text));
         onFinish?.Invoke();
+        Close();
+
     }
     public IEnumerator TypeDialog(string line)
     {
-        Show();
         yield return new WaitForEndOfFrame();
         dialogText.text = " ";
         foreach (var letter in line.ToCharArray())
@@ -38,7 +39,30 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds(1f / 30f);
         }
         yield return new WaitForSeconds(1.5f);
-        Close();
 
     }
+    // public IEnumerator TypeDialog(Dialog dialog)
+    // {
+
+    //     foreach (var line in dialog.lines)
+    //     {
+    //         yield return new WaitForEndOfFrame();
+    //         dialogText.text = " ";
+    //         foreach (var letter in line.ToCharArray())
+    //         {
+    //             dialogText.text += letter;
+    //             yield return new WaitForSeconds(1f / 30f);
+    //         }
+    //         yield return new WaitForSeconds(1.5f);
+    //     }
+
+    // }
 }
+// public class Dialog
+// {
+//     public List<string> lines;
+//     public Dialog(List<string> lines)
+//     {
+//         this.lines = lines;
+//     }
+// }
