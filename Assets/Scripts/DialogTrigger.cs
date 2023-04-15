@@ -5,7 +5,7 @@ public class DialogTrigger : MonoBehaviour
     public string text;
     private SpriteRenderer sp;
     public bool used;
-    public UnityEvent onTrigger;
+    public UnityEvent onTrigger, onFinish;
     void Awake()
     {
         sp = GetComponent<SpriteRenderer>();
@@ -17,7 +17,7 @@ public class DialogTrigger : MonoBehaviour
         {
             onTrigger?.Invoke();
             DialogManager.i.gameObject.SetActive(true);
-            DialogManager.i.ShowDialog(text);
+            StartCoroutine(DialogManager.i.ShowDialog(text, onFinish));
             used = true;
         }
     }

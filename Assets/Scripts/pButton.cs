@@ -3,8 +3,12 @@ using UnityEngine;
 public class pButton : MonoBehaviour
 {
     public GameObject other;
-
-    public bool active = true;
+    public bool initialState = true;
+    public bool active;
+    void Start()
+    {
+        active = initialState;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<ButtonActivator>() != null && active)
@@ -25,5 +29,9 @@ public class pButton : MonoBehaviour
         {
             this.other = null;
         }
+    }
+    public void SetActive(bool state)
+    {
+        active = state;
     }
 }

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager i;
@@ -19,10 +21,11 @@ public class DialogManager : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    public void ShowDialog(string text)
+    public IEnumerator ShowDialog(string text, UnityEvent onFinish)
     {
         Show();
-        StartCoroutine(TypeDialog(text));
+        yield return (TypeDialog(text));
+        onFinish?.Invoke();
     }
     public IEnumerator TypeDialog(string line)
     {
