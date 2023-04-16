@@ -16,5 +16,5 @@ and some coding, got a button system done
 Made more art, for a bomb, and arrow pointer : ![Bomb](https://raw.githubusercontent.com/DanPeled/GameDevJS2023Jam/main/Assets/Animation/Art/Bomb.png) made a door system and a bomb & bomb destoryer code, also made particale systems for the bomb and bomb destroy animation, also made a dialouge system.
 
 ## Day 4:
-made a restart and checkpoint systems, fixed code bugs and made more map design : ![Map day 4](https://media.discordapp.net/attachments/1097134991772762184/1097135325383508079/image.png?width=557&height=463)
+made a restart and checkpoint systems, fixed code bugs and made more map design : ![Map day 4](https://media.discordapp.net/attachments/1097134991772762184/1097135325383508079/image.png?width=557&height=463) </br>
 also made a oclussion culling system to reduce game lags.
