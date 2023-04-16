@@ -17,3 +17,4 @@ Made more art, for a bomb, and arrow pointer : ![Bomb](https://raw.githubusercon
 
 ## Day 4:
 made a restart and checkpoint systems, fixed code bugs and made more map design : ![Map day 4](https://media.discordapp.net/attachments/1097134991772762184/1097135325383508079/image.png?width=557&height=463)
+also made a oclussion culling system to reduce game lags.
