@@ -51,7 +51,7 @@ public class BombHandler : MonoBehaviour
         deathTextAnimator.SetBool("Show", true);
         yield return new WaitForSeconds(deathTextAnimator.GetCurrentAnimatorClipInfo(0).Length);
         deathTextAnimator.SetBool("Show", false);
-
+        deathText.text = "";
         CheckPointHandler.i.Restart();
     }
     public void SetBomb(Bomb b)
@@ -62,7 +62,6 @@ public class BombHandler : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Bomb>() != null)
         {
-            print($"{bomb.active}");
             this.bomb = other.gameObject.GetComponent<Bomb>();
         }
     }

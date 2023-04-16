@@ -36,6 +36,9 @@ public class CheckPointHandler : MonoBehaviour
         {
             // get every bomb and reset its position
             bomb.transform.position = bomb.originalPos;
+            bomb.active = bomb.initialState;
+            bomb.time = bomb.originalTime;
+            bomb.gameObject.SetActive(false);
         }
         foreach (var btn in FindObjectsOfType<pButton>())
         {
@@ -51,6 +54,7 @@ public class CheckPointHandler : MonoBehaviour
         {
             // reset state of each bomb trigger
             bombTrigger.gameObject.SetActive(true);
+            bombTrigger.bc.enabled = true;
         }
         checkPoint.Load(); // reset player pos
     }

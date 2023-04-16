@@ -4,8 +4,11 @@ public class BombTrigger : MonoBehaviour
 {
     SpriteRenderer sr;
     public UnityEvent onTrigger;
+    [HideInInspector]
+    public BoxCollider2D bc;
     void Awake()
     {
+        bc = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         sr.enabled = false;
     }
@@ -19,7 +22,7 @@ public class BombTrigger : MonoBehaviour
             bomb.transform.position = bomb.originalPos;
             bomb.gameObject.SetActive(false);
             onTrigger?.Invoke();
-            gameObject.SetActive(false);
+            bc.enabled = (false);
         }
     }
 }
