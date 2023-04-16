@@ -2,7 +2,10 @@
 
 Game for the Game Dev JS 2023 Gam Jam with the theme of : 
 # Time
-<a href="">Day 1</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-1-">Day 1</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-2-">Day 2</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-3-">Day 3</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-4-">Day 4</a>
 # Progress
 
 ## Day 1 : 
