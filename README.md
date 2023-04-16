@@ -2,11 +2,7 @@
 
 Game for the Game Dev JS 2023 Gam Jam with the theme of : 
 # Time
-
-<list>
-  <option>Day 1</option>
-  </list>
-
+<a href="">Day 1</a>
 # Progress
 
 ## Day 1 : 
