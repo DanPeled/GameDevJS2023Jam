@@ -13,4 +13,4 @@ Got some art done, mostly character art : ![Tinytime](https://raw.githubusercont
 and some coding, got a button system done
 
 ## Day 3 : 
-Made more art, for a bomb, and arrow pointer : ![Bomb](https://raw.githubusercontent.com/DanPeled/GameDevJS2023Jam/main/Assets/Animation/Art/bomb.png)
+Made more art, for a bomb, and arrow pointer : ![Bomb](https://raw.githubusercontent.com/DanPeled/GameDevJS2023Jam/main/Assets/Animation/Art/Bomb.png)
