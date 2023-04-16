@@ -4,6 +4,7 @@ Game for the Game Dev JS 2023 Gam Jam with the theme of :
 # Time
 
 <list>
+  <option>Day 1</option>
   </list>
 
 # Progress
