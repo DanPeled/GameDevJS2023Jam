@@ -41,17 +41,20 @@ public class BombHandler : MonoBehaviour
     }
     IEnumerator OnDeath()
     {
+        var exp = Instantiate(ParticaleEffects.i.explosion, bomb.transform.position, Quaternion.identity); // spawn a explosion effect
         bomb.time = 0;
         bomb.active = false;
-
         deathCount++;
-
+        AudioManager.i.PlaySFX("pop");
         deathText.text = $"{deathCount}";
 
         deathTextAnimator.SetBool("Show", true);
         yield return new WaitForSeconds(deathTextAnimator.GetCurrentAnimatorClipInfo(0).Length);
         deathTextAnimator.SetBool("Show", false);
         deathText.text = "";
+        CheckPointHandler.i.Restart();
+        Destroy(exp);
+        yield return new WaitForEndOfFrame();
         CheckPointHandler.i.Restart();
     }
     public void SetBomb(Bomb b)

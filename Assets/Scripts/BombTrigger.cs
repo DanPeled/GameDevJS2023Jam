@@ -15,7 +15,8 @@ public class BombTrigger : MonoBehaviour
     }
     void Update()
     {
-        if (this.bomb == null){
+        if (this.bomb == null)
+        {
             onNotTriggered?.Invoke();
         }
     }
@@ -26,11 +27,12 @@ public class BombTrigger : MonoBehaviour
         if (bomb != null)
         {
             bomb.active = false;
-            Instantiate(ParticaleEffects.i.explosion, bomb.transform.position, Quaternion.identity);
-            bomb.transform.position = bomb.originalPos;
-            bomb.gameObject.SetActive(false);
-            onTrigger?.Invoke();
-            bc.enabled = (false);
+            var exp = Instantiate(ParticaleEffects.i.explosion, bomb.transform.position, Quaternion.identity); // spawn a explosion effect
+            bomb.transform.position = bomb.originalPos; // reset bomb pos
+            bomb.gameObject.SetActive(false); // disable bomb
+            onTrigger?.Invoke(); // trigger onTrigger event
+            bc.enabled = (false); // disable this script's 2D box collider
+            AudioManager.i.PlaySFX("pop");
         }
     }
 }

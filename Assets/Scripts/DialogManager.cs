@@ -23,6 +23,7 @@ public class DialogManager : MonoBehaviour
     }
     public IEnumerator ShowDialog(string text, UnityEvent onFinish)
     {
+        AudioManager.i.PlaySFX("beep");
         Show();
         yield return (TypeDialog(text));
         onFinish?.Invoke();

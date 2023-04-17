@@ -6,7 +6,11 @@ public class Shake : MonoBehaviour
     public bool start;
     public float duration = 1f;
     public AnimationCurve curve;
-
+    public static Shake i;
+    void Awake()
+    {
+        i = this;
+    }
     void Update()
     {
         if (start)

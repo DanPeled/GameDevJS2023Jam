@@ -31,4 +31,8 @@ public class Bomb : MonoBehaviour
     {
         active = state;
     }
+    void OnEnable()
+    {
+        AudioManager.i.PlaySFX("ignite");
+    }
 }
