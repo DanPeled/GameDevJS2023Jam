@@ -25,4 +25,4 @@ made a restart and checkpoint systems, fixed code bugs and made more map design 
 also made a oclussion culling system to reduce game lags.
 
 ## Day 5:
-Added music and SFXs to the game, also added the [serialized dicts](https://assetstore.unity.com/packages/tools/integration/serializabledictionary-90477) asset, and some more map design.
+Added [music and SFXs](https://github.com/DanPeled/GameDevJS2023Jam/tree/main/Assets/Audio) to the game, also added the [serialized dicts](https://assetstore.unity.com/packages/tools/integration/serializabledictionary-90477) asset, and some more map design.
