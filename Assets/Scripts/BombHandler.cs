@@ -1,52 +1,65 @@
 using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using System;
 using UnityEngine;
 using TMPro;
+using System;
+using System.Collections;
+
 public class BombHandler : MonoBehaviour
 {
-    public static BombHandler i;
+    public static BombHandler Instance { get; private set; }
+
     public Bomb bomb;
     public TextMeshProUGUI timeTxt, deathText;
     public Animator deathTextAnimator;
     public int deathCount;
-    void Awake()
+
+    private List<Bomb> bombs = new List<Bomb>();
+
+    private void Awake()
     {
-        i = this;
+        Instance = this;
     }
-    void Update()
+
+    private void Update()
     {
-        TimeSpan ts = TimeSpan.FromSeconds(bomb.time); // Convert deltaTime to TimeSpan
-        string timeString = string.Format("{0:D2}:{1:D2}:{2:D3}", ts.Minutes, ts.Seconds, ts.Milliseconds); // Format the TimeSpan as "MM:SS:fff"
         if (!bomb.active)
         {
-            timeTxt.text = ""; // clear the timetxt text if the bomb isnt active
+            timeTxt.text = "";
+            return;
         }
-        else
-            timeTxt.text = timeString; // Set the formatted time to the timeTxt text
 
-        // remove each inactive bomb from the list, and if theres only one active, change the bomb var to it
-        List<Bomb> bombs = FindObjectsOfType<Bomb>().ToList();
-        bombs.RemoveAll(b => !b.active);
+        TimeSpan ts = TimeSpan.FromSeconds(bomb.time);
+        timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D3}", ts.Minutes, ts.Seconds, ts.Milliseconds);
+
+        bombs.Clear();
+        Bomb[] bombArray = FindObjectsOfType<Bomb>();
+        for (int i = 0; i < bombArray.Length; i++)
+        {
+            if (bombArray[i].active)
+            {
+                bombs.Add(bombArray[i]);
+            }
+        }
+
         if (bombs.Count == 1)
         {
             bomb = bombs[0];
         }
+
         if (bomb.time <= 0 && bomb.active)
         {
             StartCoroutine(OnDeath());
         }
-
     }
-    IEnumerator OnDeath()
+
+    private IEnumerator OnDeath()
     {
-        var exp = Instantiate(ParticaleEffects.i.explosion, bomb.transform.position, Quaternion.identity); // spawn a explosion effect
+        var exp = Instantiate(ParticaleEffects.i.explosion, bomb.transform.position, Quaternion.identity);
         bomb.time = 0;
         bomb.active = false;
         deathCount++;
         AudioManager.i.PlaySFX("pop");
-        deathText.text = $"{deathCount}";
+        deathText.text = deathCount.ToString();
 
         deathTextAnimator.SetBool("Show", true);
         yield return new WaitForSeconds(deathTextAnimator.GetCurrentAnimatorClipInfo(0).Length);
@@ -54,18 +67,21 @@ public class BombHandler : MonoBehaviour
         deathText.text = "";
         CheckPointHandler.i.Restart();
         Destroy(exp);
-        yield return new WaitForEndOfFrame();
+        yield return null;
         CheckPointHandler.i.Restart();
     }
+
     public void SetBomb(Bomb b)
     {
-        this.bomb = b;
+        bomb = b;
     }
-    void OnCollisionEnter2D(Collision2D other)
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.GetComponent<Bomb>() != null)
+        Bomb b = other.gameObject.GetComponent<Bomb>();
+        if (b != null && b.active)
         {
-            this.bomb = other.gameObject.GetComponent<Bomb>();
+            bomb = b;
         }
     }
 }

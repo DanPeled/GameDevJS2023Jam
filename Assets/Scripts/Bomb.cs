@@ -4,34 +4,46 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    public float time = 60, originalTime;
-    public bool active, initialState = true;
+    public float time = 60f, originalTime;
+    public bool active = true, initialState = true;
     public Vector3 originalPos;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
+        active = initialState;
         originalTime = time;
         originalPos = transform.position;
-        active = initialState;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (active)
         {
             time -= Time.deltaTime;
         }
+        if (time <= 0f)
+        {
+            active = false;
+            StartCoroutine(Explode());
+        }
     }
-    void OnDestroy()
+
+    private IEnumerator Explode()
     {
-        active = false;
+        CheckPointHandler.i.Restart();
+        AudioManager.i.PlaySFX("pop");
+        GameObject exp = Instantiate(ParticaleEffects.i.explosion, transform.position, Quaternion.identity);
+        yield return null;
+        CheckPointHandler.i.Restart();
+        this.gameObject.SetActive(false);
     }
+
     public void SetActive(bool state)
     {
         active = state;
     }
-    void OnEnable()
+
+    private void OnEnable()
     {
         AudioManager.i.PlaySFX("ignite");
     }

@@ -14,6 +14,10 @@ public class CheckPointHandler : MonoBehaviour
         if (checkPoint != null)
         {
             // check if colliding with a checkpoint and if true set it the the current checkpoint
+            if (this.checkPoint != null && this.checkPoint.index > checkPoint.index)
+            {
+                return;
+            }
             this.checkPoint = checkPoint;
         }
     }
@@ -55,6 +59,7 @@ public class CheckPointHandler : MonoBehaviour
             // reset state of each bomb trigger
             bombTrigger.gameObject.SetActive(true);
             bombTrigger.bc.enabled = true;
+            bombTrigger.onNotTriggered?.Invoke();
         }
         checkPoint.Load(); // reset player pos
     }

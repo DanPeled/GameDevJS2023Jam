@@ -22,6 +22,10 @@ public class OclussionCulling : MonoBehaviour
 
         // Add all child objects to the objectsToCull list
         objectsToCull.AddRange(childObjects);
+        foreach (var platform in FindObjectsOfType<MovingPlatform>())
+        {
+            objectsToCull.Add(platform.gameObject);
+        }
     }
 
 

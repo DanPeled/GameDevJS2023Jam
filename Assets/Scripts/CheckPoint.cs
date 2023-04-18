@@ -4,6 +4,7 @@ public class CheckPoint : MonoBehaviour
 {
     public Vector3 playerPos;
     private SpriteRenderer sr;
+    public int index = 0;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
