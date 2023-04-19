@@ -22,31 +22,33 @@ public class BombHandler : MonoBehaviour
 
     private void Update()
     {
-        if (!bomb.active)
+        if (bomb != null && !bomb.active)
         {
             timeTxt.text = "";
             return;
         }
-
-        TimeSpan ts = TimeSpan.FromSeconds(bomb.time);
-        timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D3}", ts.Minutes, ts.Seconds, ts.Milliseconds);
-
+        if (bomb != null)
+        {
+            TimeSpan ts = TimeSpan.FromSeconds(bomb.time);
+            timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D3}", ts.Minutes, ts.Seconds, ts.Milliseconds);
+        }
         bombs.Clear();
         Bomb[] bombArray = FindObjectsOfType<Bomb>();
-        for (int i = 0; i < bombArray.Length; i++)
-        {
-            if (bombArray[i].active)
+        if (bombArray.Length > 0)
+            for (int i = 0; i < bombArray.Length; i++)
             {
-                bombs.Add(bombArray[i]);
+                if (bombArray[i].active)
+                {
+                    bombs.Add(bombArray[i]);
+                }
             }
-        }
 
         if (bombs.Count == 1)
         {
             bomb = bombs[0];
         }
 
-        if (bomb.time <= 0 && bomb.active)
+        if (bomb != null && bomb.time <= 0 && bomb.active)
         {
             StartCoroutine(OnDeath());
         }

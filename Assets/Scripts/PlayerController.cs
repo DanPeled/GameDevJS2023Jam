@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public void Start()
     {
+        if (CameraController.i != null)
+            CameraController.i.playerTransform = transform;
         i = this;
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
