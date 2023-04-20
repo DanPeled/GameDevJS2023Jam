@@ -46,6 +46,11 @@ public class Bullet : MonoBehaviour
     }
     void Damage(Transform enemy)
     {
+        Enemy enemyC = enemy.GetComponent<Enemy>();
+        if (enemyC != null)
+        {
+            PlayerStats.money += enemyC.reward;
+        }
         Destroy(enemy.gameObject);
     }
     void Explode()

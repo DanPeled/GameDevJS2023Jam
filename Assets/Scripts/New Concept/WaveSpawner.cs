@@ -5,12 +5,19 @@ public class WaveSpawner : MonoBehaviour
 {
     public Transform enemyPrefab;
     public Transform spawnPoint;
+    public float originalTimeBetweenWaves = 5f;
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
-
+    public TextMeshProUGUI waveCountText;
     public TextMeshProUGUI waveCountdownText;
-    private int wave = 0;
+    public int wave = 1;
+    public static WaveSpawner i;
+    public int enemyCount = 0;
 
+    void Awake()
+    {
+        i = this;
+    }
     void Update()
     {
         if (countdown <= 0f)
@@ -24,6 +31,7 @@ public class WaveSpawner : MonoBehaviour
     }
     IEnumerator SpawnWave()
     {
+        waveCountText.text = $"WAVE: {wave}";
         for (int i = 0; i < wave; i++)
         {
             SpawnEnemy();

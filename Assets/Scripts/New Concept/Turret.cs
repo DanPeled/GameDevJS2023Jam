@@ -74,7 +74,7 @@ public class Turret : MonoBehaviour
             bullet.Seek(target);
         }
     }
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
