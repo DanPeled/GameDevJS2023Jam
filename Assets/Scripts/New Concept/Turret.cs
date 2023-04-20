@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    [SerializeField]
     private Transform target;
 
     [Header("Stats")]
     public float range = 15f;
     public float fireRate = 1f;
-    private float fireCountdown = 0;
+    public float fireCountdown = 0;
     [Header("Refrences")]
     public string enemyTag = "enemy";
     public float turnSpeed = 10;
@@ -17,7 +18,7 @@ public class Turret : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.01f);
     }
     void Update()
     {
@@ -30,7 +31,7 @@ public class Turret : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(dir);
 
         Vector3 rotation = Quaternion.Lerp(this.rotator.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        this.rotator.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        this.rotator.rotation = Quaternion.Euler(0f, 0f, rotation.z);
 
         if (fireCountdown <= 0)
         {

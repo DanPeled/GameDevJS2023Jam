@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
+using System.Linq;
 public class GridManager : MonoBehaviour
 {
     public string mapString;
@@ -16,6 +17,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Transform cam;
 
     private Dictionary<Vector2, Tile> tiles;
+    public GameObject[] ways;
     void Start()
     {
         GenerateGrid();
@@ -25,7 +27,6 @@ public class GridManager : MonoBehaviour
         ClearGrid();
         tiles = new Dictionary<Vector2, Tile>();
         string[] objects = mapString.Split(",");
-        int count = 0;
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
@@ -33,21 +34,26 @@ public class GridManager : MonoBehaviour
                 var spawnedTile = Instantiate(tilePrefab, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.transform.parent = map.transform;
                 spawnedTile.name = $"Tile ({x}, {y})";
-                var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
-                spawnedTile.Init(isOffset);
-
+                Colour(x, y, spawnedTile);
 
                 tiles[new Vector2(x, y)] = spawnedTile;
-                count++;
-                if (count >= objects.Length)
-                {
-                    continue;
-                }
-                Instantiate(GetPiece(objects[count]), new Vector3(x, y), Quaternion.identity).transform.parent = map.transform;
             }
         }
-
-        cam.transform.position = new Vector3((float)width / 2f - 0.5f, (float)height / 2 - 0.5f, -10);
+    }
+    public void ColourAll()
+    {
+        GenerateGrid();
+        foreach (Tile tile in tiles.Values)
+        {
+            float x = tile.transform.position.x, y = tile.transform.position.y;
+            var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
+            tile.Init(isOffset);
+        }
+    }
+    public void Colour(float x, float y, Tile tile)
+    {
+        var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
+        tile.Init(isOffset);
     }
     public Tile GetTileAtPos(Vector2 pos)
     {
