@@ -37,4 +37,4 @@ Worked on SFXs more, also some on map design and a lot of bug fixes.
 Got new idea for the game concept, a TD (tower defense) game, and started making new game.
 
 ## Day 8:
-Made turrets, map system, map, turret placement, waves, enemys, and basic money system. Also some art : ![Set](https://raw.githubusercontent.com/DanPeled/GameDevJS2023Jam/main/Assets/Animation/Art/Set.png)
+Made turrets, map system, map, turret placement, waves, enemys, and basic money system. Also some art : ![Set](https://github.com/DanPeled/GameDevJS2023Jam/blob/main/Assets/Animation/Art/Set.png?raw=true)
