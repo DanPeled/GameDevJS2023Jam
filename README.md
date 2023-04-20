@@ -7,6 +7,10 @@ Game for the Game Dev JS 2023 Gam Jam with the theme of :
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-3-">Day 3</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-4">Day 4</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-5">Day 5</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-6">Day 6</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-7">Day 7</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-8">Day 8</a>
+
 
 # Progress
 
@@ -29,3 +33,9 @@ Added [music and SFXs](https://github.com/DanPeled/GameDevJS2023Jam/tree/main/As
 
 ## Day 6 : 
 Worked on SFXs more, also some on map design and a lot of bug fixes.
+
+## Day 7:
+Got new idea for the game concept, a TD (tower defense) game, and started making new game.
+
+## Day 8:
+Made turrets, map system, map, turret placement, waves, enemys, and basic money system.
