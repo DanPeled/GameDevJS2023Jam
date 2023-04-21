@@ -38,3 +38,6 @@ Got new idea for the game concept, a TD (tower defense) game, and started making
 
 ## Day 8:
 Made turrets, map system, map, turret placement, waves, enemys, and basic money system. Also some art : ![Set](https://github.com/DanPeled/GameDevJS2023Jam/blob/main/Assets/Animation/Art/Set.png?raw=true)
+
+## Day 9: 
+Made more art, reward system, more towers, enemy health, player health, turret UI system, etc ![Buildings]()
