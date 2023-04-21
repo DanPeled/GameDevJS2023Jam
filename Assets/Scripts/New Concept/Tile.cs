@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class Tile : MonoBehaviour
 {
     public Vector2 offset;
@@ -22,13 +22,17 @@ public class Tile : MonoBehaviour
     }
     void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (!BuildManager.i.CanBuild)
         {
             return;
         }
         if (turret != null)
         {
-            Debug.Log("Cant build there - TODO: Display on screen");
+            BuildManager.i.SelectNode(this);
             return;
         }
 

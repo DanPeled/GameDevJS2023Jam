@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
     public float explosionRadius = 0f;
     public float speed = 70f;
+    public int damage = 50;
     public GameObject impactEffect;
     public void Seek(Transform target)
     {
@@ -46,12 +47,12 @@ public class Bullet : MonoBehaviour
     }
     void Damage(Transform enemy)
     {
-        Enemy enemyC = enemy.GetComponent<Enemy>();
-        if (enemyC != null)
+        Enemy e = enemy.GetComponent<Enemy>();
+        
+        if (e != null)
         {
-            PlayerStats.money += enemyC.reward;
+            e.TakeDamage(damage);
         }
-        Destroy(enemy.gameObject);
     }
     void Explode()
     {

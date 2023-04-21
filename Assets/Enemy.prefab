@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4190083434164337079}
   - component: {fileID: 4190083434164337076}
   - component: {fileID: 1620487130353254212}
+  - component: {fileID: 7202011659153940214}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -98,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7977dae15bcf44990ba3ca91c992c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
   reward: 1
+  health: 50
 --- !u!95 &1620487130353254212
 Animator:
   serializedVersion: 5
@@ -120,3 +121,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &7202011659153940214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190083434164337077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5404d5eea3d6f9846a322fb5b3e76165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

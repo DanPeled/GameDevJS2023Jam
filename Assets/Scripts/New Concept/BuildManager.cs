@@ -6,10 +6,10 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager i;
     private TurretBlueprint turretToBuild;
-    public GameObject standardTurretPrefab;
-    public GameObject anotherTurretPrefab;
+    private Tile selectedTile;
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.money >= turretToBuild.price; } }
+    public TileUI nodeUI;
     void Awake()
     {
         if (i != null)
@@ -23,6 +23,24 @@ public class BuildManager : MonoBehaviour
     public void SelectTurretToBuild(TurretBlueprint turret)
     {
         this.turretToBuild = turret;
+        DeselectNode();
+    }
+    public void SelectNode(Tile tile)
+    {
+        if (selectedTile == tile)
+        {
+            DeselectNode();
+            return;
+        }
+        selectedTile = tile;
+        turretToBuild = null;
+
+        nodeUI.SetTarget(tile);
+    }
+    public void DeselectNode()
+    {
+        selectedTile = null;
+        nodeUI.Hide();
     }
     public void BuildTurretOn(Tile tile)
     {

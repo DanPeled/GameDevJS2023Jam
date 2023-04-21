@@ -2,35 +2,32 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 10f;
+    [HideInInspector]
+    public float speed;
+    
+    public float startSpeed = 5f;
     public int reward = 1;
-    private Transform target;
-    private int wavepointIndex = 0;
+    public float health = 100;
 
     void Start()
     {
-        target = Waypoints.points[0];
+        speed = startSpeed;
     }
-
-    void Update()
+    public void TakeDamage(float amount)
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime * (WaveSpawner.i.wave / 3), Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+        health -= amount;
+        if (health <= 0)
         {
-            GetNextWaypoint();
+            Die();
         }
     }
-    void GetNextWaypoint()
+    public void Slow(float pct)
     {
-        if (wavepointIndex >= Waypoints.points.Length - 1)
-        {
-            PlayerStats.health--;
-            Destroy(gameObject);
-            return;
-        }
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        speed = startSpeed * (1 - pct);
+    }
+    void Die()
+    {
+        PlayerStats.money += reward;
+        Destroy(gameObject);
     }
 }

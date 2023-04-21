@@ -38,6 +38,7 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(0.4f);
         }
         wave++;
+        PlayerStats.rounds++;
         Debug.Log("wave incoming");
     }
     void SpawnEnemy()
