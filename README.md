@@ -10,6 +10,8 @@ Game for the Game Dev JS 2023 Gam Jam with the theme of :
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-6-">Day 6</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-7">Day 7</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-8">Day 8</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-9">Day 9</a>
+
 
 # Progress
 
@@ -40,4 +42,4 @@ Got new idea for the game concept, a TD (tower defense) game, and started making
 Made turrets, map system, map, turret placement, waves, enemys, and basic money system. Also some art : ![Set](https://github.com/DanPeled/GameDevJS2023Jam/blob/main/Assets/Animation/Art/Set.png?raw=true)
 
 ## Day 9: 
-Made more art, reward system, more towers, enemy health, player health, turret UI system, etc ![Buildings]()
+Made more art, reward system, more towers, enemy health, player health, turret UI system, etc ![Buildings](https://github.com/DanPeled/GameDevJS2023Jam/blob/main/Assets/Buildings.png?raw=true)
