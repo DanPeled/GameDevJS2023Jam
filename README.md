@@ -43,3 +43,6 @@ Made turrets, map system, map, turret placement, waves, enemys, and basic money 
 
 ## Day 9: 
 Made more art, reward system, more towers, enemy health, player health, turret UI system, etc ![Buildings](https://github.com/DanPeled/GameDevJS2023Jam/blob/main/Assets/Buildings.png?raw=true)
+
+## Day 10:
+Added upgrades (kinda), added sfx and music, fixed bugs, game over screen, and more.
