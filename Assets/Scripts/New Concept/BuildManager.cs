@@ -10,6 +10,7 @@ public class BuildManager : MonoBehaviour
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.money >= turretToBuild.price; } }
     public TileUI nodeUI;
+    private TurretBlueprint tempTurret;
     void Awake()
     {
         if (i != null)
@@ -23,6 +24,7 @@ public class BuildManager : MonoBehaviour
     public void SelectTurretToBuild(TurretBlueprint turret)
     {
         this.turretToBuild = turret;
+        tempTurret = turretToBuild;
         DeselectNode();
     }
     public void SelectNode(Tile tile)
@@ -40,17 +42,19 @@ public class BuildManager : MonoBehaviour
     public void DeselectNode()
     {
         selectedTile = null;
+        turretToBuild = tempTurret;
         nodeUI.Hide();
     }
-    public void BuildTurretOn(Tile tile)
+
+    void Update()
     {
-        if (PlayerStats.money < turretToBuild.price)
+        if (Input.GetMouseButtonDown(1))
         {
-            return;
+            DeselectNode();
         }
-        PlayerStats.money -= turretToBuild.price;
-        // build a turret
-        GameObject turret = Instantiate(turretToBuild.prefab, new Vector3(tile.GetBuildPos().x, tile.GetBuildPos().y, 0), tile.transform.rotation);
-        tile.turret = turret;
+    }
+    public TurretBlueprint GetTurretToBuild()
+    {
+        return turretToBuild;
     }
 }

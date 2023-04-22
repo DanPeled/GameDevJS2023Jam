@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
         {
             EndGame();
         }
+
+        // prevent health from becoming negative
+        PlayerStats.health = (int)Mathf.Clamp(PlayerStats.health, 0, Mathf.Infinity);
     }
     void EndGame()
     {

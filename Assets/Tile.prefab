@@ -191,6 +191,11 @@ MonoBehaviour:
   turret: {fileID: 0}
   spriteRenderer: {fileID: 5987801661637746101}
   highlight: {fileID: 5987801660510536283}
+  currentBlueprint:
+    prefab: {fileID: 0}
+    price: 0
+    upgradeCost: 0
+  upgradedLvl: 1
 --- !u!61 &5830642953750951758
 BoxCollider2D:
   m_ObjectHideFlags: 0

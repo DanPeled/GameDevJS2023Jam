@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7977dae15bcf44990ba3ca91c992c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 1
+  speed: 0
+  startSpeed: 5
+  reward: 2
   health: 50
 --- !u!95 &1620487130353254212
 Animator:
@@ -133,4 +135,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5404d5eea3d6f9846a322fb5b3e76165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
