@@ -79,8 +79,9 @@ public class Tile : MonoBehaviour
             return;
         }
         PlayerStats.money -= (currentBlueprint.upgradeCost * upgradedLvl);
-        // build a turret
+        // upgrade
         upgradedLvl++;
+        turret.GetComponent<Turret>().Upgrade(upgradedLvl);
     }
 
     void OnMouseExit()

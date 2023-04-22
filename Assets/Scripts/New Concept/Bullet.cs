@@ -57,7 +57,6 @@ public class Bullet : MonoBehaviour
     void Explode()
     {
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-
         foreach (Collider2D collider in hitObjects)
         {
             if (collider.tag == "Enemy")

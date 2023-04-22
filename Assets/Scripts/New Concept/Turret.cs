@@ -27,6 +27,8 @@ public class Turret : MonoBehaviour
     public Transform rotator;
     public Transform firePoint;
 
+    private int level = 1;
+    int rangeBoost;
 
     void Start()
     {
@@ -79,9 +81,11 @@ public class Turret : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-
-        Vector3 rotation = Quaternion.Lerp(this.rotator.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        this.rotator.rotation = Quaternion.Euler(0f, 0f, rotation.z);
+        if (rotator != null)
+        {
+            Vector3 rotation = Quaternion.Lerp(this.rotator.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+            this.rotator.rotation = Quaternion.Euler(0f, 0f, rotation.z);
+        }
     }
 
     void UpdateTarget()
@@ -98,7 +102,7 @@ public class Turret : MonoBehaviour
                 nearestEnemy = enemy;
             }
         }
-        if (nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && shortestDistance <= CalculateRange())
         {
             target = nearestEnemy.transform;
             targetEnemy = nearestEnemy.GetComponent<Enemy>();
@@ -121,6 +125,47 @@ public class Turret : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, CalculateRange());
+    }
+    public void Upgrade(int lvl)
+    {
+        this.level = lvl;
+        int r = Random.Range(0, 3);
+        switch (r)
+        {
+            case 0:
+                //range
+                rangeBoost += level / 3;
+                break;
+            case 1:
+                //effect
+                if (useLaser)
+                {
+                    slowAmount += 0.03f;
+                }
+                else
+                {
+                    fireRate += 0.3f;
+                }
+                break;
+            case 2:
+                //damage
+                {
+                    if (useLaser)
+                    {
+                        damageOverTime += level / 2;
+                    }
+                    else
+                    {
+                        bulletPrefab.GetComponent<Bullet>().damage += level / 3;
+                    }
+                    break;
+                }
+        }
+        print(r);
+    }
+    float CalculateRange()
+    {
+        return Mathf.Clamp(range + rangeBoost, range, 7);
     }
 }
