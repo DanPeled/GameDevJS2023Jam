@@ -1,16 +1,17 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     [HideInInspector]
     public float speed;
-    
     public float startSpeed = 5f;
     public int reward = 1;
-    public float health = 100;
+    public float startHealth = 100f;
+    private float health;
 
     void Start()
     {
+        health = startHealth;
         speed = startSpeed;
     }
     public void TakeDamage(float amount)
@@ -28,6 +29,11 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         PlayerStats.money += reward;
+
+        AudioManager.i.PlaySFX("hit");
+
+        WaveSpawner.enemiesAlive--;
+
         Destroy(gameObject);
     }
 }

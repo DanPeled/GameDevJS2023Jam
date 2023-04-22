@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        {
+            AudioManager.i.PlaySFX("click");
+        }
         if (gameEnded) return;
         if (PlayerStats.health <= 0)
         {

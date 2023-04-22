@@ -3,7 +3,8 @@ using UnityEngine;
 using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
+    public static int enemiesAlive = 0;
+    public GameObject enemyPrefab;
     public Transform spawnPoint;
     public float originalTimeBetweenWaves = 5f;
     public float timeBetweenWaves = 5f;
@@ -12,7 +13,6 @@ public class WaveSpawner : MonoBehaviour
     public TextMeshProUGUI waveCountdownText;
     public int wave = 1;
     public static WaveSpawner i;
-    public int enemyCount = 0;
 
     void Awake()
     {
@@ -20,10 +20,15 @@ public class WaveSpawner : MonoBehaviour
     }
     void Update()
     {
+        if (enemiesAlive > 0)
+        {
+            return;
+        }
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
+            return;
         }
         countdown -= Time.deltaTime;
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
@@ -31,18 +36,19 @@ public class WaveSpawner : MonoBehaviour
     }
     IEnumerator SpawnWave()
     {
+        wave++;
+        PlayerStats.rounds++;
         waveCountText.text = $"WAVE: {wave}";
         for (int i = 0; i < wave; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(Random.Range(0.3f, 0.5f));
         }
-        wave++;
-        PlayerStats.rounds++;
         Debug.Log("wave incoming");
     }
     void SpawnEnemy()
     {
+        enemiesAlive++;
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }

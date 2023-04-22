@@ -69,6 +69,7 @@ public class Tile : MonoBehaviour
         currentBlueprint = blueprint;
         // build a turret
         GameObject turret = Instantiate(blueprint.prefab, new Vector3(this.GetBuildPos().x, this.GetBuildPos().y, 0), this.transform.rotation);
+        AudioManager.i.PlaySFX("build");
         this.turret = turret;
     }
     public void UpdgradeTurret()

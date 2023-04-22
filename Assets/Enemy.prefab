@@ -100,9 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  startSpeed: 5
+  startSpeed: 3
   reward: 2
-  health: 50
+  startHealth: 100
+  healthBar: {fileID: 0}
 --- !u!95 &1620487130353254212
 Animator:
   serializedVersion: 5
