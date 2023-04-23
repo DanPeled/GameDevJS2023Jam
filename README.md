@@ -12,6 +12,8 @@ Game for the Game Dev JS 2023 Gam Jam with the theme of :
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-8">Day 8</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-9">Day 9</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-10">Day 10</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-11">Day 11</a>
+
 
 
 
@@ -48,3 +50,6 @@ Made more art, reward system, more towers, enemy health, player health, turret U
 
 ## Day 10:
 Added upgrades (kinda), added sfx and music, fixed bugs, game over screen, and more.
+
+## Day 11:
+Added fully working upgrades, more sfx, basic main menu, more enemies and more.
