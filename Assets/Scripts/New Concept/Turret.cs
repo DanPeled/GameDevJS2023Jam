@@ -26,7 +26,7 @@ public class Turret : MonoBehaviour
     public float turnSpeed = 10;
     public Transform rotator;
     public Transform firePoint;
-
+    public int upgradeCost;
     private int level = 1;
     int rangeBoost;
 
@@ -36,6 +36,10 @@ public class Turret : MonoBehaviour
     }
     void Update()
     {
+        if (PlayerStats.health < 0)
+        {
+            return;
+        }
         if (target == null)
         {
             if (useLaser && lineRenderer.enabled)

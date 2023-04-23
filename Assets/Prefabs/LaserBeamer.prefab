@@ -198,6 +198,7 @@ MonoBehaviour:
   turnSpeed: 10
   rotator: {fileID: 4550142453125851104}
   firePoint: {fileID: 7864450332676680162}
+  upgradeCost: 120
 --- !u!120 &-1895127175068999246
 LineRenderer:
   serializedVersion: 2

@@ -6,8 +6,8 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     BuildManager buildManager;
-    public TurretBlueprint standardTurret, missleLauncher, laserBeamer;
-    public TextMeshProUGUI standardtext, missletext, laserbeamertext;
+    public TurretBlueprint standardTurret, missleLauncher, laserBeamer, alternateStandard;
+    public TextMeshProUGUI standardtext, missletext, laserbeamertext, alternateStandardText;
     public GameObject turretChosen;
     void Start()
     {
@@ -40,20 +40,27 @@ public class Shop : MonoBehaviour
         if (PlayerStats.money >= standardTurret.price)
             buildManager.SelectTurretToBuild(standardTurret);
         turretChosen.transform.position = standardtext.transform.parent.parent.transform.position;
-        turretChosen.transform.localScale = standardtext.transform.parent.parent.transform.localScale;
+        turretChosen.GetComponent<RectTransform>().sizeDelta = standardtext.transform.parent.parent.GetComponent<RectTransform>().sizeDelta;
 
+    }
+    public void SelectAltStandardTurret()
+    {
+        if (PlayerStats.money >= alternateStandard.price)
+            buildManager.SelectTurretToBuild(alternateStandard);
+        turretChosen.transform.position = alternateStandardText.transform.parent.parent.transform.position;
+        turretChosen.GetComponent<RectTransform>().sizeDelta = alternateStandardText.transform.parent.parent.GetComponent<RectTransform>().sizeDelta;
     }
     public void SelectMissleLauncher()
     {
         buildManager.SelectTurretToBuild(missleLauncher);
         turretChosen.transform.position = missletext.transform.parent.parent.transform.position;
-        turretChosen.transform.localScale = missletext.transform.parent.parent.transform.localScale;
+        turretChosen.GetComponent<RectTransform>().sizeDelta = missletext.transform.parent.parent.GetComponent<RectTransform>().sizeDelta;
     }
     public void SelectLaserBeamer()
     {
         if (PlayerStats.money >= laserBeamer.price)
             buildManager.SelectTurretToBuild(laserBeamer);
         turretChosen.transform.position = laserbeamertext.transform.parent.parent.transform.position;
-        turretChosen.transform.localScale = laserbeamertext.transform.parent.parent.transform.localScale;
+        turretChosen.GetComponent<RectTransform>().sizeDelta = laserbeamertext.transform.parent.parent.GetComponent<RectTransform>().sizeDelta;
     }
 }

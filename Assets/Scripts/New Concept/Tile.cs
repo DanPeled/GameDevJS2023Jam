@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
+    public GameObject buildEffect;
     public Vector2 offset;
     [SerializeField] private Color baseColor, offsetColor, normalHighlightColor, noMoneyColor;
     public GameObject turret;
@@ -57,20 +58,26 @@ public class Tile : MonoBehaviour
             highlightRenderer.color = noMoneyColor;
         }
         highlight.SetActive(true);
-        GameLoop.i.currentTile = transform.position;
     }
     void BuildTurret(TurretBlueprint blueprint)
     {
         if (PlayerStats.money < blueprint.price)
         {
+            Debug.Log("not enough money");
             return;
         }
+        var effect = Instantiate(buildEffect, transform.position, Quaternion.identity);
+
+        Debug.Log($"built {blueprint.prefab.name}");
         PlayerStats.money -= blueprint.price;
         currentBlueprint = blueprint;
+
         // build a turret
         GameObject turret = Instantiate(blueprint.prefab, new Vector3(this.GetBuildPos().x, this.GetBuildPos().y, 0), this.transform.rotation);
         AudioManager.i.PlaySFX("build");
         this.turret = turret;
+
+        Destroy(effect, 2);
     }
     public void UpdgradeTurret()
     {

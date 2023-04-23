@@ -13,8 +13,12 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
+        var speedBoost = WaveSpawner.i.wave > 25 ? Mathf.Clamp(WaveSpawner.i.wave / 3, 0, 3) :
+         Mathf.Clamp(WaveSpawner.i.wave / 4f, 0, 2.5f);
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
+        if (PlayerStats.health > 0)
+            transform.Translate(dir.normalized * enemy.speed * Time.deltaTime *
+            (speedBoost), Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {

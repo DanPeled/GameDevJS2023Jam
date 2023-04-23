@@ -14,7 +14,7 @@ public class RoundsSurvived : MonoBehaviour
     {
         roundsText.text = "0";
         int round = 0;
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.3f);
         while (round < PlayerStats.rounds)
         {
             round++;
