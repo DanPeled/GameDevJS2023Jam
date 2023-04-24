@@ -13,6 +13,8 @@ Game for the Game Dev JS 2023 Gam Jam with the theme of :
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-9">Day 9</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-10">Day 10</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-11">Day 11</a>
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-12">Day 12</a>
+
 
 
 
@@ -53,3 +55,6 @@ Added upgrades (kinda), added sfx and music, fixed bugs, game over screen, and m
 
 ## Day 11:
 Added fully working upgrades, more sfx, basic main menu, more enemies and more.
+
+## Day 12:
+Addedd another map, finished main menu, bug fixes ![new map]()
