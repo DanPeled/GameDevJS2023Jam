@@ -57,4 +57,4 @@ Added upgrades (kinda), added sfx and music, fixed bugs, game over screen, and m
 Added fully working upgrades, more sfx, basic main menu, more enemies and more.
 
 ## Day 12:
-Addedd another map, finished main menu, bug fixes ![new map]()
+Addedd another map, finished main menu, bug fixes ![new map](https://github.com/DanPeled/GameDevJS2023Jam/blob/main/Assets/Map02.png?raw=true)
