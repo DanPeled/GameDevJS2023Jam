@@ -33,6 +33,11 @@ public class Shop : MonoBehaviour
             laserbeamertext.color = PlayerStats.money >= laserBeamer.price ? Color.white : Color.red;
             laserbeamertext.transform.parent.parent.GetComponent<Button>().interactable = PlayerStats.money >= laserBeamer.price;
         }
+        if (alternateStandardText != null)
+        {
+            alternateStandardText.color = PlayerStats.money >= alternateStandard.price ? Color.white : Color.red;
+            alternateStandardText.transform.parent.parent.GetComponent<Button>().interactable = PlayerStats.money >= alternateStandard.price;
+        }
         turretChosen.SetActive(buildManager.GetTurretToBuild() != null);
     }
     public void SelectStandardTurret()

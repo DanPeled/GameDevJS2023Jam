@@ -14,8 +14,11 @@ public class GridManager : MonoBehaviour
 
     private Dictionary<Vector2, Tile> tiles;
     public GameObject[] ways;
+    public Camera cam;
+    public Vector3 camOffset;
     void Start()
     {
+        cam = Camera.main;
         GenerateGrid();
     }
     public void GenerateGrid()
@@ -34,6 +37,7 @@ public class GridManager : MonoBehaviour
                 tiles[new Vector2(x, y)] = spawnedTile;
             }
         }
+        cam.transform.position = new Vector3((float)width / 2f - 0.5f, (float)height / 2 - 0.5f, -10) + camOffset;
     }
 
     public void Colour(float x, float y, Tile tile)

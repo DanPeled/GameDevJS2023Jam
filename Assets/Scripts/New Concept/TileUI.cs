@@ -18,7 +18,7 @@ public class TileUI : MonoBehaviour
         this.target = tile;
         transform.position = target.GetBuildPos();
 
-        ui.transform.localPosition = tile.transform.localPosition.y < 0.9977493 ? upPos : downPos;
+        ui.transform.localPosition = tile.transform.localPosition.y < 5 ? upPos : downPos;
 
         upgradeCost.text = "$" + target.currentBlueprint.upgradeCost * tile.upgradedLvl;
         sellPrice.text = "$" + target.currentBlueprint.GetSellAmount() * tile.upgradedLvl;
