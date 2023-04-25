@@ -2,6 +2,9 @@
 
 Game for the Game Dev JS 2023 Gam Jam with the theme of : 
 # Time
+Published [here](https://jeffrygames.itch.io/time-td)
+
+# Progress
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-1-">Day 1</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-2-">Day 2</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-3-">Day 3</a>
@@ -15,8 +18,6 @@ Game for the Game Dev JS 2023 Gam Jam with the theme of :
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-11">Day 11</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-12">Day 12</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-13">Day 13</a>
-
-# Progress
 
 ## Day 1 : 
 In the first day I mostly focused on getting an idea for a game, and decided on a game that you will need to take out bombs before they blow out of *TIME*.
