@@ -14,10 +14,7 @@ Game for the Game Dev JS 2023 Gam Jam with the theme of :
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-10">Day 10</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-11">Day 11</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-12">Day 12</a>
-
-
-
-
+<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-13">Day 13</a>
 
 # Progress
 
@@ -58,3 +55,6 @@ Added fully working upgrades, more sfx, basic main menu, more enemies and more.
 
 ## Day 12:
 Addedd another map, finished main menu, bug fixes ![new map](https://github.com/DanPeled/GameDevJS2023Jam/blob/main/Assets/Map02.png?raw=true)
+
+## Day 13:
+Finishing touches, submitted my game on [here](https://jeffrygames.itch.io/time-td)
