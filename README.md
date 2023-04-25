@@ -58,3 +58,6 @@ Addedd another map, finished main menu, bug fixes ![new map](https://github.com/
 
 ## Day 13:
 Finishing touches, submitted my game on [here](https://jeffrygames.itch.io/time-td)
+
+# Summary & Conclusions
+Through the jam I have learned a few mechanics I have never used before, gizmo drawing for an example, and got alot of progress done in short time, got 2 prototypes done... but used one of at the end. Thanks for all the support through the jam.
