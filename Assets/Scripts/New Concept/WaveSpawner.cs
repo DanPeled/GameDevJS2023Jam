@@ -20,6 +20,7 @@ public class WaveSpawner : MonoBehaviour
         spawnPoint = GameObject.Find("START").transform;
         i = this;
     }
+
     void Update()
     {
         if (enemiesAlive > 0 || PlayerStats.health < 0)
@@ -36,6 +37,7 @@ public class WaveSpawner : MonoBehaviour
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
         waveCountdownText.text = string.Format("{0:00.00}", countdown);
     }
+
     IEnumerator SpawnWave()
     {
         wave++;
@@ -53,9 +55,11 @@ public class WaveSpawner : MonoBehaviour
         }
         Debug.Log("wave incoming");
     }
+
     void SpawnEnemy(GameObject enemyPrefab)
     {
         enemiesAlive++;
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        var enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        enemy.GetComponent<Enemy>().health = enemy.GetComponent<Enemy>().startHealth * (wave / 24);
     }
 }

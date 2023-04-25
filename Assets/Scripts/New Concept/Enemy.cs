@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public float startSpeed = 5f;
     public int reward = 1;
     public float startHealth = 100f;
-    private float health;
+    public float health;
 
     void Start()
     {
