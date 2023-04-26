@@ -5,9 +5,9 @@ Game for the Game Dev JS 2023 Gam Jam with the theme of :
 Published [here](https://jeffrygames.itch.io/time-td)
 
 # Progress
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-1-">Day 1</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-2-">Day 2</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-3-">Day 3</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-1-">Day 1</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-2-">Day 2</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-3-">Day 3</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-4">Day 4</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-5-">Day 5</a>
 <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-6-">Day 6</a>
