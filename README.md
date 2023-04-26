@@ -40,7 +40,7 @@ Added [music and SFXs](https://github.com/DanPeled/GameDevJS2023Jam/tree/main/As
 Worked on SFXs more, also some on map design and a lot of bug fixes.
 
 ## Day 7:
-Got new idea for the game concept, a TD (tower defense) game, and started making new game.
+Got new idea for the game concept, a TD (tower defense) game, and started making a new game.
 
 ## Day 8:
 Made turrets, map system, map, turret placement, waves, enemys, and basic money system. Also some art : ![Set](https://github.com/DanPeled/GameDevJS2023Jam/blob/main/Assets/Animation/Art/Set.png?raw=true)
