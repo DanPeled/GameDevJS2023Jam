@@ -7,7 +7,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Init();
+    }
+    public void Init()
+    {
         gameEnded = false;
+        WaveSpawner.enemiesAlive = 0;
+        WaveSpawner.i.wave = 0;
+        Time.timeScale = 1;
+        PlayerStats.i.Init();
     }
     void Update()
     {

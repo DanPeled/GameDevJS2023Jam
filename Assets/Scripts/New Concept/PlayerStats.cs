@@ -9,11 +9,20 @@ public class PlayerStats : MonoBehaviour
     public static int health;
     public int startHealth = 20;
     public static int rounds;
-    void Start()
+    public static PlayerStats i;
+    public void Init()
     {
         money = startMoney;
         health = startHealth;
 
         rounds = 0;
+    }
+    void Start()
+    {
+        Init();
+    }
+    void Awake()
+    {
+        i = this;
     }
 }

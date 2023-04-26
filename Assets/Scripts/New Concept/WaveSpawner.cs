@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 2f;
     public TextMeshProUGUI waveCountText;
     public TextMeshProUGUI waveCountdownText;
-    public int wave = 1;
+    public int wave = 0;
     public int wavesRequired;
     public static WaveSpawner i;
 
@@ -23,6 +23,10 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        if (wave == 0)
+        {
+            this.waveCountText.text = $"Starting Soon...";
+        }
         if (enemiesAlive > 0 || PlayerStats.health < 0)
         {
             return;
@@ -42,7 +46,7 @@ public class WaveSpawner : MonoBehaviour
     {
         wave++;
         PlayerStats.rounds++;
-        waveCountText.text = $"WAVE: {wave}";
+        if (wave != 0) waveCountText.text = $"WAVE: {wave}";
         for (int i = 0; i < wave; i++)
         {
             if (PlayerStats.health < 0)
