@@ -8,16 +8,16 @@ Published [here](https://jeffrygames.itch.io/time-td)
 - <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-1-">Day 1</a>
 - <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-2-">Day 2</a>
 - <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-3-">Day 3</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-4">Day 4</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-5-">Day 5</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-6-">Day 6</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-7">Day 7</a></br>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-8">Day 8</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-9">Day 9</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-10">Day 10</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-11">Day 11</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-12">Day 12</a>
-<a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-13">Day 13</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-4">Day 4</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-5-">Day 5</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-6-">Day 6</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-7">Day 7</a></br>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-8">Day 8</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-9">Day 9</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-10">Day 10</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-11">Day 11</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-12">Day 12</a>
+- <a href="https://github.com/DanPeled/GameDevJS2023Jam/blob/main/README.md#day-13">Day 13</a>
 
 ## Day 1 : 
 In the first day I mostly focused on getting an idea for a game, and decided on a game that you will need to take out bombs before they blow out of *TIME*.
